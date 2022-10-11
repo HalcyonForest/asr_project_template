@@ -15,4 +15,10 @@ class TestTextEncoder(unittest.TestCase):
 
     def test_beam_search(self):
         # TODO: (optional) write tests for beam search
-        pass
+        # TODO добавить еще 1-2 тестика для красоты и полноты.
+        hypothesises = ["a^^","aa^","aab", "aab", "aaa"]
+        true_text = "a"
+        inds = [text_encoder.char2ind[c] for c in text]
+        decoded_text = text_encoder.ctc_beam_search(inds, ???)
+        self.assertIn(decoded_text, true_text)
+        return
